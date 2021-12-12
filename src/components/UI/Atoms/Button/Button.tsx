@@ -4,10 +4,10 @@ import React from 'react'
 export default function Button(props: any) {
     return (
         <button 
-            className={props.className}
+            className={props.style}
             name={props.name}
             type={props.type}
-            onClick={props.onClick}
+            onClick={props.action}
             disabled={props.disabled}
         >{props.text}</button>
     )
@@ -15,9 +15,9 @@ export default function Button(props: any) {
 
 Button.defaultProps = {
     text: 'Button',
-    className: 'py-2 px-4 rounded-full text-white bg-blue-500 hover:bg-blue-700',
+    style: 'py-2 px-4 rounded-full text-white bg-blue-500 hover:bg-blue-700',
     name: 'default btn',
     type: 'button',
-    onClick: () => {},
+    action: () => {},
     disabled: false
 }

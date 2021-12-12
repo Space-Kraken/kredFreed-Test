@@ -13,4 +13,12 @@ export const Home ={
         
         The project consists of creating a larog form, friendly with the user and with validations. 
     `,
+    cardInteractive:true,
+    actionInteractiveStyle:'flex flex-row justify-end px-6 pt-4',
+    cardInteractiveButtons: [
+        {
+            cardButtonText: 'Go to the project',
+            style: 'bg-blue-500 py-2 px-4 rounded-full text-white hover:bg-green-500',            
+        },
+    ]
 }
