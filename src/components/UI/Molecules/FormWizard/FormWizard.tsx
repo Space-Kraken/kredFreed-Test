@@ -54,9 +54,6 @@ export default function FormWizard(props: any) {
                     <Tab
                         key={index}
                         className={({ selected }) =>{
-                            if(selected){
-                                // setTabIndex(index);
-                            }
                             return tabController(index, selected)
                         }}
                     >
