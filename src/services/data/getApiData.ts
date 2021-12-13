@@ -1,0 +1,6 @@
+export const Data = {
+    async getApiData(url:string) {
+        const response = await fetch(url);
+        return response.json();
+    }
+}

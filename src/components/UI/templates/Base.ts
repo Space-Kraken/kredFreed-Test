@@ -22,22 +22,22 @@ export const Base = {
     */
     navbarRoutes:[
         {
-            name: "Home",
+            name: "Página Inicial",
             page: "/"
         },
         {
-            name: "User form",
+            name: "Formulário",
             page: "/add-user"
         },
     ],
 
     userLinks: [
         {
-            name: "Login",
+            name: "Iniciar session",
             page: "/login"
         },
         {
-            name: "Signup",
+            name: "Registrarse",
             page: "/signup"
         },
         {

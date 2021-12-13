@@ -1,9 +1,13 @@
-import Navbar from "./Navbar";
 import Card from "./Card";
+import Form from "./Form";
 import Footer from "./Footer";
+import Navbar from "./Navbar";
+import FormWizard from "./FormWizard";
 
 export const Molecules = {
-    Navbar,
     Card,
-    Footer
+    Form,
+    Footer,
+    Navbar,
+    FormWizard
 }

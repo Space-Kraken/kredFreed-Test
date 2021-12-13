@@ -6,7 +6,7 @@ export default function Router() {
     return (
         <Routes>
             <Route path="/" element={<Domain.Home />} />
-            <Route path="/test" element={<Domain.Test />} />
+            <Route path="/add-user" element={<Domain.AddUser />} />
         </Routes>
     )
 }

@@ -6,5 +6,18 @@ module.exports = {
                 require('autoprefixer')
             ]
         }
+    },
+    webpack:{
+        configure:{
+            module:{
+                rules:[
+                    {
+                        type:'javascript/auto',
+                        test:/\.m?js$/,
+                        include: /node_modules/,
+                    }
+                ]
+            }
+        }
     }
 }

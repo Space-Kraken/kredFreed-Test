@@ -10,6 +10,7 @@ export default function Navbar(props: any) {
     const getLinks = () =>{
         return props.navLinks.map((link: any, index: number) => (
             <Atoms.NavLink 
+                key={index}
                 style={props.linkStyle} 
                 name={link.name} page={link.page} 
                 active={location.pathname===link.page}
@@ -29,10 +30,20 @@ export default function Navbar(props: any) {
                     props.userLinks.map((link: any, index: number) => {
                         if(sessionStorage.getItem('active')){
                             if(link.name === 'Logout'){
-                                return <Atoms.NavLink style={props.linkStyle} name={link.name} page={link.page}/>     
+                                return <Atoms.NavLink 
+                                            key={index}
+                                            style={props.linkStyle} 
+                                            name={link.name} 
+                                            page={link.page}
+                                        />     
                             }
                         }else if(link.name !== 'Logout'){
-                            return <Atoms.NavLink style={props.linkStyle} name={link.name} page={link.page}/>     
+                            return <Atoms.NavLink 
+                                        key={index}
+                                        style={props.linkStyle} 
+                                        name={link.name} 
+                                        page={link.page}
+                                    />     
                         }
                         return null;
                     })
@@ -97,7 +108,7 @@ export default function Navbar(props: any) {
 Navbar.defaultProps = {
     style: '',
     logo: '',
-    title: 'Navbar',
+    title: 'KredFeed',
     linkStyle:'',
     navLinks: [
         {

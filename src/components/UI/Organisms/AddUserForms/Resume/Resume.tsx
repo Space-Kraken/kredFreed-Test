@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Test() {
+export default function Resume() {
     return (
         <div>
-            Router test
+            Resume
         </div>
     )
 }

@@ -1,8 +1,7 @@
 import Home from "./Home";
-import Test from "./Test";
-
+import AddUser from "./AddUser";
 
 export const Domain = {
     Home,
-    Test
+    AddUser
 }
