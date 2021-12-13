@@ -4,7 +4,7 @@ import { Templates } from '../../../templates'
 
 export default function Financial(props: any) {
 
-    const templateData = Templates.AddUserForms.Financial
+    const templateData = Templates.AddUsersFormsData.Financial
 
     return (
         <Molecules.Form

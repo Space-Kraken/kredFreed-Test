@@ -1,9 +1,19 @@
 import React from 'react'
+import { Organisms } from '..';
 import { Atoms } from "./../../Atoms";
 import { Molecules } from "./../../Molecules";
 import { Templates } from "./../../templates";
 
+
 export default function AddUser(props:any) {
+
+    const tabs = [
+        <Organisms.AddUserForms.General />,
+        <Organisms.AddUserForms.AddressAndContact />,
+        <Organisms.AddUserForms.Financial />,
+        <Organisms.AddUserForms.AvalContact />,
+        <Organisms.AddUserForms.Resume />,
+    ]
 
     return (
         <Atoms.Body
@@ -16,6 +26,7 @@ export default function AddUser(props:any) {
                     tabStyle={Templates.AddUser.generalStyle}
                     stepStyle={Templates.AddUser.stepStyle}
                     stepListStyle={Templates.AddUser.stepListStyle}
+                    tabs={tabs}
                />
             </Atoms.Animation>
         </Atoms.Body>

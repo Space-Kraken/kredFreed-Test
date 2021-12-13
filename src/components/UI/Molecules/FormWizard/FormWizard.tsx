@@ -2,15 +2,11 @@ import React from 'react'
 import { Tab } from "@headlessui/react";
 import { Atoms } from './../../Atoms';
 import { Hooks } from "./../../../../Hooks";
-import { Organisms } from '../../Organisms';
 
 export default function FormWizard(props: any) {
     const [tabIndex, setTabIndex] = Hooks.useLocalStorage("tabIndex", '0');
 
     const tabController = (index: number, status: boolean) => {
-        if (status) {
-            setTabIndex(index);
-        }
         return status
         ? props.tabActiveStyle
         : props.tabStyle
@@ -37,12 +33,13 @@ export default function FormWizard(props: any) {
         }
     }
 
-    const Tabs: JSX.Element[] = [
-        <Organisms.AddUserForms.General action={tabChanger} />,
-        <Organisms.AddUserForms.AddressAndContact action={tabChanger} />,
-        <Organisms.AddUserForms.Financial action={tabChanger} />,
-        <Organisms.AddUserForms.Resume />,
-    ]
+    const Tabs: JSX.Element[] = 
+        props.tabs.map((tab: any, index: number) => {
+            const dinamycTab = React.cloneElement(tab, {
+                action: tabChanger,
+            })
+            return dinamycTab;
+        });
 
     return (
         <Tab.Group
@@ -57,6 +54,9 @@ export default function FormWizard(props: any) {
                     <Tab
                         key={index}
                         className={({ selected }) =>{
+                            if(selected){
+                                // setTabIndex(index);
+                            }
                             return tabController(index, selected)
                         }}
                     >

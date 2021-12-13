@@ -4,7 +4,8 @@ import {
     FcBullish, 
     FcConferenceCall, 
     FcApproval,
-    FcHighPriority
+    FcHighPriority,
+    FcContacts
 } from "react-icons/fc";
 
 export const AddUser = {
@@ -15,22 +16,20 @@ export const AddUser = {
     stepStyle:"p-2",
     formComplete:FcApproval,
     fromIncomplete:FcHighPriority,
-    formWizardSteps: [
-        {
-            title: 'General',
-            icon: FcConferenceCall,
-        },
-        {
-            title: 'Direccion y contacto',
-            icon: FcBusinessContact,
-        },
-        {
-            title: 'Informacion Finaciera',
-            icon: FcBullish,
-        },
-        {
-            title: 'Resumen',
-            icon: FcViewDetails,
-        },
-    ]
+    formWizardSteps: [{
+        title: 'General',
+        icon: FcConferenceCall,
+    },{
+        title: 'Direccion y contacto',
+        icon: FcBusinessContact,
+    },{
+        title: 'Informacion Finaciera',
+        icon: FcBullish,
+    },{
+        title: 'Aval contacto',
+        icon: FcContacts,
+    },{
+        title: 'Resumen',
+        icon: FcViewDetails,
+    },]
 }

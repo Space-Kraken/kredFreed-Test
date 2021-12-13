@@ -19,7 +19,8 @@ export default function Home(props:any) {
                     <div className={Templates.Home.actionInteractiveStyle}>
                         {Templates.Home.cardInteractiveButtons.map(
                             (button:any, index:number) => (
-                                <Atoms.Button 
+                                <Atoms.Button
+                                    key={index} 
                                     style={button.style}
                                     text={button.cardButtonText}
                                     action={props.cardButtonAction}

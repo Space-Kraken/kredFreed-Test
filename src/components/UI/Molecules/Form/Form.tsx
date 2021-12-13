@@ -19,7 +19,10 @@ export default function Form(props:any) {
                 text={props.title}
             />
                 {props.sections.map((section:any, index:number)=>(
-                    <div className='flex flex-col'>
+                    <div 
+                        key={index}
+                        className='flex flex-col'
+                        >
                         <span className='font-normal'>{section.title}</span>
                         {section.fields.map((field:any, index:number)=>(
                             field.inputType === 'select' 
@@ -39,9 +42,10 @@ export default function Form(props:any) {
                         ))}
                     </div>
                 ))}
-                <div className='mt-4 flex flex-row justify-end'>
+                <div className='mt-4 mr-2 flex flex-row justify-end'>
                     {props.actions.map((section:any, index:number)=>(
-                        <Atoms.Button 
+                        <Atoms.Button
+                            key={index} 
                             text={section.value}
                             action={()=>{props.action("next")}}
                         />

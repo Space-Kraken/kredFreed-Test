@@ -4,7 +4,7 @@ import { Templates } from "./../../../templates";
 
 export default function AddressAndContact(props:any) {
 
-    const templateData = Templates.AddUserForms.AddressAndContact
+    const templateData = Templates.AddUsersFormsData.AddressAndContact
 
     return (
         <Molecules.Form

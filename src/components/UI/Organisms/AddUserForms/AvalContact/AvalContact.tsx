@@ -1,10 +1,10 @@
 import React from 'react'
-import { Molecules } from "./../../../Molecules";
-import { Templates } from "./../../../templates";
+import { Molecules } from '../../../Molecules'
+import { Templates } from '../../../templates'
 
-export default function General(props:any) {
+export default function AvalContact(props:any) {
 
-    const templateData = Templates.AddUsersFormsData.General
+    const templateData = Templates.AddUsersFormsData.AvalContact
 
     return (
         <Molecules.Form
