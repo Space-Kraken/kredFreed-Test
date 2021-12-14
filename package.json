@@ -2,6 +2,10 @@
   "name": "kredfreed-test",
   "version": "0.1.0",
   "private": true,
+  "engines":{
+    "node": ">=8.0.0",
+    "npm": ">=6.0.0"
+  },
   "dependencies": {
     "@craco/craco": "^6.4.3",
     "@headlessui/react": "^1.4.2",
