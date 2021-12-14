@@ -5,7 +5,7 @@ export const General = {
     sections: [{
         title: "Datos de la empresa",
         fields: [{
-            id: "comName",
+            id: "comBussinesName",
             type:"text",
             inputType: "select",
             inputTitle: "Razon social",

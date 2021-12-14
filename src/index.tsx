@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from "react-router-dom";
+
 import './index.css';
 import App from './App';
+import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from "react-router-dom";
+import { ToastProvider } from "react-toast-notifications";
 
 ReactDOM.render(
+  <ToastProvider placement="bottom-center">
     <BrowserRouter>
       <App />
-    </BrowserRouter>,
+    </BrowserRouter>
+  </ToastProvider>,
   document.getElementById('root')
 );
 

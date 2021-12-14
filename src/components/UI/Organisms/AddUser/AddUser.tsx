@@ -12,7 +12,7 @@ export default function AddUser(props:any) {
         <Organisms.AddUserForms.AddressAndContact />,
         <Organisms.AddUserForms.Financial />,
         <Organisms.AddUserForms.AvalContact />,
-        <Organisms.AddUserForms.Resume />,
+        <Organisms.AddUserResume />,
     ]
 
     return (

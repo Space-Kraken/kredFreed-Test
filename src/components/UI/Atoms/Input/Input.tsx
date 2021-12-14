@@ -15,11 +15,9 @@ export default function Input(props: any) {
             isValid: !isValid,
             message: message
         });
-        if(props.type !=='file'){
-            setValue(e.target.value)
-        }
         if(isValid){
             setFile(e.target.value);
+            setValue(e.target.value)
         }
     }
 
@@ -43,6 +41,7 @@ export default function Input(props: any) {
                     props.id
                         ?(event) => handleChange(event)
                         :()=>{}}
+                disabled={props.disabled}
             />
             <span className={`${error.isValid?"flex flex-row":"hidden"} justify-end font-thin mx-2 text-red-400`}>{error.message}</span>
         </>
@@ -54,7 +53,8 @@ Input.defaultProps = {
     style: 'bg-gray-200 appearance-none border-2 rounded m-2 py-2 px-4 mt-1 mb-2 text-gray-700 leading-tight focus:outline-none focus:bg-white',
     inputTitle: '',
     type: 'text',
-    value: '',
+    value: null,
     placeholder: '',
     validateType: 'text',
+    disabled: false
 }
