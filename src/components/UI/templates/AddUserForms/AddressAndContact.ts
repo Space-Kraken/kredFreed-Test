@@ -8,10 +8,12 @@ export const AddressAndContact = {
             id: "comPhone",
             type:"phone",
             inputTitle:"Teléfono de la empresa",
-            placeholder: "Ej. 461 1234 123",
+            validateType:"phone",
+            placeholder: "Ej. 4611234123",
         },{
             id: "comEmail",
             type:"email",
+            validateType:"email",
             inputTitle:"Correo electrónico",
             placeholder: "Ej. ejemplo@algo.com",
         }]
@@ -56,12 +58,14 @@ export const AddressAndContact = {
             id: "comZipCode",
             inputTitle:"Codigo postal",
             type:"text",
+            validateType:"zipcode",
             placeholder: "Ej. 12345",
         },]
     },{
         title: "Comprobamte de domicilio",
         fields: [{
             id: "comAddressProof",
+            validateType:"file",
             type:"file",
         }]
     },],

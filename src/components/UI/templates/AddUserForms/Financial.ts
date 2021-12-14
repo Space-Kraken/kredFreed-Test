@@ -7,7 +7,8 @@ export const Financial = {
         fields: [{
             id: "comBankAccount",
             inputTitle:"Numero de cuenta",
-            type:"number",
+            type:"text",
+            validateType:"backaccount",
             placeholder: "Ej. 123456789",
         },{
             id: "comBankName",
@@ -64,6 +65,7 @@ export const Financial = {
             id: "LRRfc",
             type:"text",
             inputTitle:"RFC",
+            validateType:"rfc",
             placeholder: "Ej. RFC123456XXX",
         },{
             id: "LRCivilStatus",
@@ -92,6 +94,7 @@ export const Financial = {
         fields: [{
             id: "LRIdProof",
             type:"file",
+            validateType:"file",
             inputTitle:"Documento de identificación",
         }]
     },],

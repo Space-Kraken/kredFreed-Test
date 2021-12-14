@@ -9,6 +9,7 @@ export const AvalContact = {
                 {
                     id: "LREmail",
                     inputTitle: "Correo Electrónico",
+                    validateType: "email",
                     inputType: "email",
                     placeholder: "Ej. ejempl@algo.com",
                 },
@@ -16,7 +17,8 @@ export const AvalContact = {
                     id: "LRPhone",
                     inputTitle: "Teléfono",
                     inputType: "tel",
-                    placeholder: "Ej. 555 5555 555",
+                    validateType: "phone",
+                    placeholder: "Ej. 4611234123",
                 }
             ]
         },
@@ -56,11 +58,12 @@ export const AvalContact = {
             id: "LRIntNum",
             inputTitle:"Numero interior (opcional)",
             type:"text",
-            placeholder: "Ej. 123b",
+            placeholder: "Ej. 123b o NA si no tiene",
         },{
             id: "LRZipCode",
             inputTitle:"Codigo postal",
             type:"text",
+            validateType: "zipcode",
             placeholder: "Ej. 12345",
         },]
         },

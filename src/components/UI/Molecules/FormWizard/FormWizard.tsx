@@ -12,8 +12,7 @@ export default function FormWizard(props: any) {
         : props.tabStyle
     }
 
-    const tabChanger = (action: string) => {
-        
+    const tabChanger = (action: string) => {        
         const element:any = document.getElementById("tab-list");
         switch(action) {
             case 'next':
@@ -49,11 +48,13 @@ export default function FormWizard(props: any) {
             <Tab.List 
                 id="tab-list"
                 className={props.stepListStyle}
-                >
-                {props.formSteps.map((step: any, index: number) => (
+                >{props.formSteps.map((step: any, index: number) => (
                     <Tab
                         key={index}
                         className={({ selected }) =>{
+                            if(selected){
+                                setTabIndex(index);
+                            }
                             return tabController(index, selected)
                         }}
                     >
@@ -70,13 +71,9 @@ export default function FormWizard(props: any) {
                     </Tab>
                 ))}
             </Tab.List>
-            <Tab.Panels
-                className="w-screen"
-            >
+            <Tab.Panels className="w-screen">
                 {props.formSteps.map((step: any, index: number) => (
-                    <Tab.Panel 
-                        key={index} 
-                    >
+                    <Tab.Panel key={index} >
                         <Atoms.Animation>
                             <Atoms.FormWizardtab>
                                 {Tabs[index]}

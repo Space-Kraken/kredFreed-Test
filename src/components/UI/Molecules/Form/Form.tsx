@@ -29,6 +29,7 @@ export default function Form(props:any) {
                             ? <Atoms.Select
                                 key={index}
                                 id={field.id}
+                                validateType={field.validateType}
                                 inputTitle={field.inputTitle}
                                 options={field.options}
                               />
@@ -37,6 +38,7 @@ export default function Form(props:any) {
                                 key={index}
                                 id={field.id}
                                 type={field.type}
+                                validateType={field.validateType}
                                 placeholder={field.placeholder}
                             />
                         ))}

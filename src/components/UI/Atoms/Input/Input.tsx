@@ -1,26 +1,60 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Hooks } from "./../../../../Hooks";
-
+import { Services } from "./../../../../services";
 export default function Input(props: any) {
-    const [value, setValue] = Hooks.useLocalStorage(props.id, '');
+    const [file, setFile] = useState('');
+    const [error, setError] = useState({
+        isValid: false,
+        message: ''
+    });
+    const [value, setValue] = Hooks.useLocalStorage(props.id, props.value);
+
+    const handleChange = (e: any) => {
+        const {isValid, message} = Services.Validate(e.target.value, props.validateType);
+        setError({
+            isValid: !isValid,
+            message: message
+        });
+        if(props.type !=='file'){
+            setValue(e.target.value)
+        }
+        if(isValid){
+            setFile(e.target.value);
+        }
+    }
+
+    const handleValue = () =>{
+        if(props.type === 'file'){
+            return file;
+        }
+        return value;
+    }
+
     return (
         <>
-            <span className='ml-2 font-thin'>{props.inputTitle}</span>
+            <span className='ml-2 font-light'>{props.inputTitle}</span>
             <input 
-                className={props.style}
+                className={`${props.style} ${error.isValid? 'border-red-500': 'boder-gray-500 focus:border-purple-500'}`}
                 type={props.type}
                 placeholder={props.placeholder}
-                value={props.id?value:'Unique Id is required'}
-                onChange={props.id?(event) => setValue(event.target.value):()=>{}}
+                value={props.id
+                    ?handleValue():'Unique Id is required'}
+                onChange={
+                    props.id
+                        ?(event) => handleChange(event)
+                        :()=>{}}
             />
+            <span className={`${error.isValid?"flex flex-row":"hidden"} justify-end font-thin mx-2 text-red-400`}>{error.message}</span>
         </>
     )
 }
 
 Input.defaultProps = {
+    id: '', 
+    style: 'bg-gray-200 appearance-none border-2 rounded m-2 py-2 px-4 mt-1 mb-2 text-gray-700 leading-tight focus:outline-none focus:bg-white',
     inputTitle: '',
-    style: 'bg-gray-200 appearance-none border-2 rounded m-2 py-2 px-4 mt-1 mb-2 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500',
     type: 'text',
+    value: '',
     placeholder: '',
-    id: ''
+    validateType: 'text',
 }

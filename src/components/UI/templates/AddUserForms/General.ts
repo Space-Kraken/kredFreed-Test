@@ -48,6 +48,7 @@ export const General = {
             id: "comRFC",
             type:"text",
             inputTitle: "RFC",
+            validateType: "rfc",
             placeholder: "Ej. RFC123456RFC",
         },{
             id: "comFiscalRegime",
@@ -82,7 +83,6 @@ export const General = {
                 label: "Personas Morales sin fines de lucro",
                 value: "Personas Morales sin fines de lucro",
             }]
-            // placeholder: "Ej. ",
         },{
             id: "comIndustry",
             type:"text",
