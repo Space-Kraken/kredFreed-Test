@@ -8,6 +8,7 @@ export default function Input(props: any) {
         message: ''
     });
     const [value, setValue] = Hooks.useLocalStorage(props.id, props.value);
+    const [input, setInput] = useState(value);
 
     const handleChange = (e: any) => {
         const {isValid, message} = Services.Validate(e.target.value, props.validateType);
@@ -16,16 +17,17 @@ export default function Input(props: any) {
             message: message
         });
         if(isValid){
-            setFile(e.target.value);
-            setValue(e.target.value)
+            setValue(e.target.value);
         }
+        setInput(e.target.value);
+        setFile(e.target.value);
     }
 
     const handleValue = () =>{
         if(props.type === 'file'){
             return file;
         }
-        return value;
+        return input;
     }
 
     return (

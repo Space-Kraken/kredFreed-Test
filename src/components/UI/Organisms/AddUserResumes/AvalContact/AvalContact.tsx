@@ -25,7 +25,7 @@ export default function AvalContact(props:any) {
                 const value = JSON.parse(inputValue);
             
                 let error = false;
-                if(inputValue===""|| inputValue==="null"){
+                if(value===""|| value===null){
                     error=true;
                 }
                 let input;

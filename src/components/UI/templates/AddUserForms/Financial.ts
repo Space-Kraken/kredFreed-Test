@@ -60,6 +60,7 @@ export const Financial = {
             id: "LRCurp",
             type:"text",
             inputTitle:"CURP",
+            validateType: "curp",
             placeholder: "Ej. CURP970905HGTNRR08",
         },{
             id: "LRRfc",

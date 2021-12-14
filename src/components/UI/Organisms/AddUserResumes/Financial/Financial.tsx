@@ -16,6 +16,7 @@ export default function Financial(props:any) {
         "RFC",
         "Estado civil",
         "Documento de identidad",
+        "Documento de identidad",
     ]
 
     return (
@@ -23,11 +24,12 @@ export default function Financial(props:any) {
             <Atoms.Title text={props.title} />
             {props.data.map((item:any, index:number) => {
                 const inputValue = localStorage!.getItem(item.id)!;
+                const value = JSON.parse(inputValue);                
+
                 let error = false;
-                if(inputValue===""|| inputValue==="null"){
+                if(value===""|| value===null){
                     error=true;
                 }
-                const value = JSON.parse(inputValue);                
                 let input;
                 if(typeof value === "object" && value!==null){
                     input = value.label

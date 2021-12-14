@@ -17,11 +17,10 @@ export default function General(props:any) {
         <Atoms.Body style={props.bodyStyle}>
             <Atoms.Title text={props.title} />
             {props.data.map((item:any, index:number) => {
-                const inputValue = localStorage!.getItem(item.id)!;
+                const inputValue = localStorage!.getItem(item.id)!;                
                 const value = JSON.parse(inputValue);
-                
                 let error = false;
-                if(inputValue===""|| inputValue==="null"){
+                if(value===""|| value===null){
                     error=true;
                 }
                 
@@ -54,7 +53,7 @@ export default function General(props:any) {
 General.defaultProps = {
     id: true,
     bodyStyle: "flex flex-col w-full justify-center items-center",
-    inputStyle: "w-1/2 bg-white border-2 rounded py-2 px-4 mt-1 mb-2 text-gray-700",
+    inputStyle: "w-4/5 text-xs md:w-1/2 md:text-base bg-white border-2 rounded py-2 px-4 mt-1 mb-2 text-gray-700",
     disabled: true,
     type: "text",
     title:"Information General"
